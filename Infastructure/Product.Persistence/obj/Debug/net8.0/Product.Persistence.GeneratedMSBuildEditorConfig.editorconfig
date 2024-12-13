@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Product.Persistence
-build_property.ProjectDir = D:\Roshan\cemex assignment\Product_Solution\Infastructure\Product.Persistence\
+build_property.ProjectDir = D:\Roshan\cemex assignment\Product-Assignment\Product_Solution\Infastructure\Product.Persistence\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
