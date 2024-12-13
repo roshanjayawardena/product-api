@@ -1,0 +1,49 @@
+# .NET Core / .NET 5+ build directories
+bin/
+obj/
+
+# User-specific files
+.vs/
+.idea/
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows image file and binaries
+Thumbs.db
+ehthumbs.db
+
+# User-specific Visual Studio Code workspace settings
+.settings/
+
+# Rider workspace settings
+.idea/
+
+# ASP.NET temporary files
+wwwroot/
+node_modules/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Azure Functions artifacts
+local.settings.json
+
+# Logs
+*.log
+
+# JetBrains Rider IDE
+.idea/
+
+# Coverlet code coverage reports
+coverage/
+
+# JetBrains Rider files
+.idea/
