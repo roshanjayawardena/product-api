@@ -1,0 +1,11 @@
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\bin\Debug\net8.0\Product.Domain.deps.json
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\bin\Debug\net8.0\Product.Domain.dll
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\bin\Debug\net8.0\Product.Domain.pdb
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.AssemblyInfoInputs.cache
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.AssemblyInfo.cs
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.csproj.CoreCompileInputs.cache
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.dll
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\refint\Product.Domain.dll
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\Product.Domain.pdb
+D:\Roshan\cemex assignment\Product_Solution\Core\Product.Domain\obj\Debug\net8.0\ref\Product.Domain.dll
