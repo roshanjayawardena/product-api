@@ -22,8 +22,9 @@ namespace Product.Application.Features.Product.Commands.DeleteProduct
                 throw new NotFoundException(nameof(item), request.Id.ToString());
             }
 
+            item.IsDeleted = true;
             // remove the item from database
-            await _productRepository.DeleteAsync(item);
+            await _productRepository.UpdateAsync(item);
 
             // return value
             return Unit.Value;
