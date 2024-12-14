@@ -12,7 +12,7 @@ namespace Product.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "User")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : ControllerBase
     {
 
