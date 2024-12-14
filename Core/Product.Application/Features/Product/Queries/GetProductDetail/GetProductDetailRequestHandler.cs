@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Product.Application.Contracts.Persistence;
 
 namespace Product.Application.Features.Product.Queries.GetProductDetail
@@ -8,11 +9,14 @@ namespace Product.Application.Features.Product.Queries.GetProductDetail
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
-        public GetProductDetailRequestHandler(IMapper mapper, IProductRepository productRepository)
+        private readonly ILogger<GetProductDetailRequest> _logger;
+
+        public GetProductDetailRequestHandler(IMapper mapper, IProductRepository productRepository, ILogger<GetProductDetailRequest> logger)
         {
 
             _mapper = mapper;
             _productRepository = productRepository;
+            _logger = logger;
         }
         public async Task<ProductDetailDto> Handle(GetProductDetailRequest request, CancellationToken cancellationToken)
         {
@@ -21,6 +25,8 @@ namespace Product.Application.Features.Product.Queries.GetProductDetail
 
             // convert to DTO Object
             var result = _mapper.Map<ProductDetailDto>(vehicle);
+
+            _logger.LogInformation("Get product detail");
 
             return result;
         }

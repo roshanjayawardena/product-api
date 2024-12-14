@@ -1,24 +1,21 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Product.Application.Contracts.Persistence;
 using Product.Application.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Product.Application.Features.Product.Commands.CreateProduct
 {
- 
     public class CreateProductRequestHandler : IRequestHandler<CreateProductRequest, Guid>
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public CreateProductRequestHandler(IProductRepository productRepository, IMapper mapper)
+        private readonly ILogger<CreateProductRequest> _logger;
+        public CreateProductRequestHandler(IProductRepository productRepository, IMapper mapper, ILogger<CreateProductRequest> logger)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _logger = logger;
         }
         public async Task<Guid> Handle(CreateProductRequest request, CancellationToken cancellationToken)
         {
@@ -36,6 +33,8 @@ namespace Product.Application.Features.Product.Commands.CreateProduct
 
             //add to database
             await _productRepository.CreateAsync(itemtoAdd);
+
+            _logger.LogInformation($"{itemtoAdd.Id} has created");
             // return value
             return itemtoAdd.Id;
         }

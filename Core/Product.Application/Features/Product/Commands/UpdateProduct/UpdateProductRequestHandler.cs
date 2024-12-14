@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Product.Application.Contracts.Persistence;
 using Product.Application.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Product.Application.Features.Product.Commands.UpdateProduct
 {
@@ -14,11 +10,13 @@ namespace Product.Application.Features.Product.Commands.UpdateProduct
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<UpdateProductRequest> _logger;
 
-        public UpdateProductRequestHandler(IProductRepository productRepository, IMapper mapper)
+        public UpdateProductRequestHandler(IProductRepository productRepository, IMapper mapper, ILogger<UpdateProductRequest> logger)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _logger = logger;
         }
         public async Task<Unit> Handle(UpdateProductRequest request, CancellationToken cancellationToken)
         {
@@ -45,6 +43,8 @@ namespace Product.Application.Features.Product.Commands.UpdateProduct
 
             // update the database
             await _productRepository.UpdateAsync(itemToEdit);
+
+            _logger.LogInformation($"{request.Id} has updated");
 
             return Unit.Value;
 

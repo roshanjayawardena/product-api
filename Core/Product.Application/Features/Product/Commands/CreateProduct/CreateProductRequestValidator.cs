@@ -22,7 +22,5 @@ namespace Product.Application.Features.Product.Commands.CreateProduct
         {
             return await _productRepository.IsCodeUniqueAsync(code);
         }
-
-
     }
 }

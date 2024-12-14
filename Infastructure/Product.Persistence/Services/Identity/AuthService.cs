@@ -122,10 +122,6 @@ namespace Product.Persistence.Services.Identity
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var principal = tokenHandler.ValidateToken(token, tokenParameters, out SecurityToken securityToken);
-
-            //if (securityToken is not JwtSecurityToken jwtSecurityToken || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-            //    throw new SecurityTokenException("Invalid token");
-
             return principal;
         }
 
@@ -145,8 +141,7 @@ namespace Product.Persistence.Services.Identity
                 throw new BadRequestException("Invalid client request");
 
             var newJwtToken = await GenerateTokenString(identityUser.Email);
-            var newRefreshToken = GenerateRefreshToken();
-            //_ = int.TryParse(_jwtSettings.RefreshTokenValidityIn., out int RefreshTokenValidityIn);
+            var newRefreshToken = GenerateRefreshToken();         
 
             identityUser.RefreshToken = newRefreshToken;
             identityUser.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenValidityIn);
@@ -159,7 +154,5 @@ namespace Product.Persistence.Services.Identity
                 RefreshToken = newRefreshToken
             };
         }
-
-
     }
 }
