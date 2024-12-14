@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
 
 namespace Product.Persistence.Configurations
 {
@@ -13,8 +12,8 @@ namespace Product.Persistence.Configurations
               .HasMaxLength(50);
             builder.Property(q => q.Code)
                .IsRequired()
-               .HasMaxLength(50);
-            builder.HasIndex(u => u.Code).IsUnique();
+               .HasMaxLength(50);           
+            builder.HasIndex(p => p.Code).HasFilter("IsDeleted = 0").IsUnique();
             builder.Property(q => q.Name)
                 .IsRequired()
                 .HasMaxLength(50);

@@ -14,7 +14,7 @@ namespace Product.Persistence.Repositories
 
         public async Task<bool> IsCodeUniqueAsync(string code)
         {
-            return !await _dbSet.AnyAsync(p => p.Code == code);
+            return !await _dbSet.AnyAsync(p => p.Code == code && !p.IsDeleted);
         }
     }
 }
